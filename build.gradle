@@ -1,0 +1,52 @@
+buildscript {
+    ext {
+        thisVersion = '0.01.0'
+        bootVersion = '1.2.0.RELEASE'
+        scalaVersion = '2.11.2'
+    }
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenCentral()
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${bootVersion}")
+    }
+}
+
+    apply plugin: 'scala'
+    apply plugin: 'spring-boot'
+    apply plugin: 'idea'
+
+
+    jar {
+        baseName = 'scala-web-template'
+        group = 'au.id.gibsons.andrew'
+        version = "${thisVersion}"
+    }
+
+repositories {
+    maven { url "http://repo.spring.io/libs-release" }
+    maven { url "http://dev-iesl.cs.umass.edu/nexus/content/groups/public" }
+    mavenLocal()
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+    dependencies {
+
+        compile("org.scala-lang:scala-library:${scalaVersion}")
+        compile("org.scala-lang:scala-compiler:${scalaVersion}")
+        compile("org.springframework.boot:spring-boot-starter-web:${bootVersion}")
+        //compile("org.springframework.boot:spring-boot-starter-security:${bootVersion}")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+
+        compile("org.springframework.boot:spring-boot-starter-data-mongodb:${bootVersion}")
+        compile("org.apache.commons:commons-math3:3.3")
+        compile('org.jsoup:jsoup:1.8.1')
+    }
+
