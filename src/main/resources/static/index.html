@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ScalaWebTemplate">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is a template for Scala Web Applications using Spring-boot and AngularJS">
+    <meta name="author" content="Andrew Gibson">
+    
+    <title>Scala Web Template</title>
+    
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="app.css"/>
+    <link rel="stylesheet" type="text/css" href="feature-one/feature-one.css">
+    <link rel="icon" href="/img/favicon.ico">
+</head>
+    
+<body ng-controller="MainCtrl">
+    
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="text-muted">{{title}}</h3>
+      </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div ng-controller="MainTabs">
+                      <tabset>
+                        <tab heading="About">
+                            <div class="container tabpanel">
+                            <p>About the web application.</p>
+                            <p>Select a tab above for the required analysis.</p>
+
+                            </div>
+                        </tab>
+                          <tab heading="Feature One">
+                            <div class="container tabpanel">
+                                <feature-one></feature-one>
+                              </div>
+                          </tab>
+                
+                      </tabset>
+                </div>
+            </div>
+        </div>
+    <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; Your Organisation Here 2015 - Based on <a href="">Scala Web Template</a> by Andrew Gibson</p>
+      </footer>
+
+    </div> <!-- /container -->
+    
+
+  
+    <!-- Library Scripts -->
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+    <!--<script src="lib/js/bootstrap.min.js"></script>-->
+    <script src="lib/js/d3.min.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="app.js"></script>
+    <script src="app-controller.js"></script>
+    <script src="feature-one/feature-one-directive.js"></script>
+    <script src="feature-one/feature-one-controller.js"></script>
+
+</body>
+</html>
